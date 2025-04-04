@@ -31,7 +31,7 @@ int main() {
             continue;
         }
         // For operations that require two numbers
-        if (ans == '+' || ans == '-' || ans == '*' || ans == '/' || ans == 'G' || ans == 'L' || ans == 'R') {
+        if (ans == '+' || ans == '-' || ans == '*' || ans == '/' || ans == 'G' || ans =='g'|| ans == 'l' || ans == 'L' || ans == 'R' || ans == 'r') {
             cout << "Enter two numbers: ";
             cin >> x >> y;
         }
@@ -48,7 +48,7 @@ int main() {
                 break;
             case '/':
                 if (y == 0) {
-                    cout << "Error: Division by zero is not allowed." << endl;
+                    cout << "Error: Division by zero is not allowed." << endl; //handles error
                 } else {
                     cout << x << " / " << y << " = " << division(x, y) << endl;
                 }
@@ -57,21 +57,24 @@ int main() {
                 cout << "Enter a positive integer: ";
                 cin >> z;
                 if (z < 0) {
-                    cout << "Error: Factorial is not defined for negative numbers." << endl;
+                    cout << "Error: Factorial is not defined for negative numbers." << endl; //handles error
                 } else {
                     cout << z << "! = " << factorial(z) << endl;
                 }
                 break;
             case 'G': case 'g':
                 cout << "GCD(" << x << ", " << y << ") = " << gcd(static_cast<int>(x), static_cast<int>(y)) << endl;
-                break;
+                break; //makes the number an integer to find the gdc
             case 'L': case 'l':
                 cout << "LCM(" << x << ", " << y << ") = " << lcm(static_cast<int>(x), static_cast<int>(y)) << endl;
-                break;
+                break; //same thing but with lcm
             case 'R': case 'r':
-                cout << "Random number between " << x << " and " << y << ": " << random(static_cast<int>(x), static_cast<int>(y)) << endl;
+                if (x > y) {
+                    swap(x, y);  //ensure x is the smaller number
+                }
+                cout << "Random number between " << x << " and " << y << ": "
+                     << random(static_cast<int>(x), static_cast<int>(y)) << endl;
                 break;
-            default:
                 cout << "Invalid operation. Please try again." << endl;
         }
     }
