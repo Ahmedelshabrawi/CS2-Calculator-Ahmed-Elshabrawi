@@ -1,0 +1,3 @@
+/Users/nadinedonia/CS2-Calculator-Ahmed-Elshabrawi/CS2-Lab-HW/build/CMakeFiles/calculator.dir
+/Users/nadinedonia/CS2-Calculator-Ahmed-Elshabrawi/CS2-Lab-HW/build/CMakeFiles/edit_cache.dir
+/Users/nadinedonia/CS2-Calculator-Ahmed-Elshabrawi/CS2-Lab-HW/build/CMakeFiles/rebuild_cache.dir

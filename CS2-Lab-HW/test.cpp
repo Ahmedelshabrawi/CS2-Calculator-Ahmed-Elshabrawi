@@ -8,16 +8,28 @@ int main() {
     double x, y;
     int z;
     char ans;
-
+    string expression;
     while (true) {
-        cout << "Enter the desired operation: +, -, *, /, !, G (for GCD), L (for LCM), R (for random number generation), E (to exit)" << endl;
+        cout << "Enter the desired operation: +, -, *, /, !, G (for GCD), L (for LCM), R (for random number generation), V to evaluate an expression, E (to exit)" << endl;
         cin >> ans;
 
         if (ans == 'E' || ans == 'e') {
             cout << "Exiting program. Goodbye!" << endl;
             break;
         }
-
+  // BONUS PART: Check if the user wants to evaluate an expression
+        if (ans == 'V' || ans == 'v') {  
+            cout << "Enter an expression to evaluate (e.g., 3 + 4 * 2): ";
+            cin.ignore(); //to clear the newline left by previous cin
+            getline(cin, expression); //read the full expression as a string
+            try {
+                double result = evaluateExpression(expression);
+                cout << "Result: " << result << endl;
+            } catch (const runtime_error& e) {
+                cout << "Error: " << e.what() << endl;
+            }
+            continue;
+        }
         // For operations that require two numbers
         if (ans == '+' || ans == '-' || ans == '*' || ans == '/' || ans == 'G' || ans == 'L' || ans == 'R') {
             cout << "Enter two numbers: ";
