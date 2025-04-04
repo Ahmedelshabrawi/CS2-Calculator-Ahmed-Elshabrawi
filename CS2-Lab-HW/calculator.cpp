@@ -2,6 +2,12 @@
 #include <ctime>    // For srand()
 #include <cctype>  // For isdigit()
 #include <stdexcept> // For exceptions
+#include <string>
+double addsub(const std::string& expression, size_t& index);
+double multdiv(const std::string& expression, size_t& index);
+double numpar(const std::string& expression, size_t& index);
+
+using namespace std;
 double addition(double num1, double num2) {
     return num1 + num2;
 }

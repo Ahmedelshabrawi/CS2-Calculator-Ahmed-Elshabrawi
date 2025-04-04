@@ -8,7 +8,7 @@ int main() {
     double x, y;
     int z;
     char ans;
-
+    string expression;
     while (true) {
         cout << "Enter the desired operation: +, -, *, /, !, G (for GCD), L (for LCM), R (for random number generation), V to evaluate an expression, E (to exit)" << endl;
         cin >> ans;
